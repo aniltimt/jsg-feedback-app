@@ -1,0 +1,6 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+<%= video_player({:file => @feedback.video.url,  :mute => true}, {:width => 500, :height => 500}) %><br>
+<%#= link_to 'Edit', edit_feedback_path(@feedback) %>
+<%= link_to 'Back', feedbacks_path %>
+</div>
