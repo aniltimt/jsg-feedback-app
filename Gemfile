@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug'
   gem 'paperclip'
   gem 'jw_player_helper'
+  gem 'bcrypt-ruby', :require => 'bcrypt' 
 end
 
 group :development do

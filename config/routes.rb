@@ -1,9 +1,22 @@
 Rails.application.routes.draw do
+
+  #match ':controller(/:action(/:id))(.:format)'
+  root :to => 'sessions#login'
+  match "signup", :to => "users#new", via: [:get,:post]
+  match "login", :to => "sessions#login", via: [:get,:post]
+  match "create", :to => "sessions#create", via: [:get,:post]
+  match "logout", :to => "sessions#logout", via: [:get,:post]
+  match "home", :to => "sessions#home", via: [:get,:post]
+  match "profile", :to => "sessions#profile", via: [:get,:post]
+  match "setting", :to => "sessions#setting", via: [:get,:post]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  #root 'home#index'
+  get 'video' => 'home#index'
+  #root 'users#new'
   resources :feedbacks
 
   # Api definition
@@ -16,6 +29,8 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  post 'users' => 'users#create'
+  get 'users' => 'users#index'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

@@ -12,8 +12,18 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<div class="container">
+<% unless session[:user_id] %>
+  <%#= link_to :Signup , :signup, class: "nav_links"%>
+  <%= link_to :Login , :login, class: "nav_links"%>	
+<% else %>
+  <%= link_to :Feedbacks , feedbacks_url, class: "nav_links" %> |
+  <%#= link_to :Profile , :profile, class: "nav_links" %>
+  <%#= link_to :Setting , :setting, class: "nav_links" %>
+  <%= link_to :Users , :users, class: "nav_links" %> |
+  <%= link_to :Logout , :logout, class: "nav_links" %>
+<% end %>
 <%= yield %>
-
+</div>
 </body>
 </html>

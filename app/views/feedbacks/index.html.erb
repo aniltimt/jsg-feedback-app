@@ -1,4 +1,3 @@
-<div class="container">
 <p id="notice"><%= notice %></p>
 <h1>Listing Feedbacks</h1>
   <table class="table table-bordered">
@@ -22,12 +21,11 @@
         <td><%= feedback.feedback_text %></td>
         <td><%= feedback.status %></td>
         <td><%= feedback.created_at %></td>        
-        <td><%= link_to 'Show', feedback %><%#= link_to 'Edit', edit_feedback_path(feedback) %><%#= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show Video', feedback %><%#= link_to 'Edit', edit_feedback_path(feedback) %><%#= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
-</div>
 <br>
  <%#= video_player({:file => @feedbacks.first.video.url,  :mute => true}, {:width => 440, :height => 300}) %>
 <%#= link_to 'New Feedback', new_feedback_path %>

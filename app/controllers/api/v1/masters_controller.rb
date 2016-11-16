@@ -6,14 +6,14 @@ class Api::V1::MastersController < ApplicationController
   # POST /feedback_create.json
   def feedback_create
   	begin
-    feedback = Feedback.new(:crew_name => params[:crew_name], :passanger_name => params[:passanger_name], :status => params[:status], 
-    	:aircraft_name => params[:aircraft_name], :video => params[:video], :feedback_text => params[:feedback_text])
+    feedback = Feedback.new(:crew_name => params[:crew_name], :passanger_name => params[:passanger_name], :status => 1, 
+    	:aircraft_name => params[:aircraft_name], :video => params[:file], :feedback_text => params[:feedback_text])
 
     if feedback.save      
       render json: { message: "Success", status: true, :data => feedback }, status: 200
       return
     else
-      render json: { message: "Failed", status: false }, status: 200
+      render json: { message: "Failed", status: false }, status: 422
       return
     end
 
