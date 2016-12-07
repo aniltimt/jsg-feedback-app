@@ -14,7 +14,10 @@
         <td><%= user.username %></td>
         <td><%= user.email %></td>
         <td><%= user.created_at %></td>        
-        <%#= link_to 'Show', feedback %><%#= link_to 'Edit', edit_feedback_path(feedback) %><%#= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%#= link_to 'Show', feedback %><%#= link_to 'Edit', edit_feedback_path(feedback) %>
+        <%# if session[:user_id] == 1 %>
+        <%#= link_to 'Destroy', "/users/#{user.id}", method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%# end %>
       </tr>
       <% end %>
     </tbody>

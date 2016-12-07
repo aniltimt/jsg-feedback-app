@@ -11,20 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101080436) do
+ActiveRecord::Schema.define(version: 20161103055159) do
 
   create_table "feedbacks", force: :cascade do |t|
-    t.string   "crew_name",          limit: 255
-    t.string   "passanger_name",     limit: 255
-    t.string   "aircraft_name",      limit: 255
-    t.string   "video_file_name",    limit: 255
-    t.string   "video_content_type", limit: 255
-    t.integer  "video_file_size",    limit: 4
+    t.string   "crew_name"
+    t.string   "passanger_name"
+    t.string   "aircraft_name"
+    t.string   "video_file_name"
+    t.string   "video_content_type"
+    t.integer  "video_file_size"
     t.datetime "video_updated_at"
-    t.text     "feedback_text",      limit: 65535
+    t.text     "feedback_text"
     t.boolean  "status"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "encrypted_password"
+    t.string   "salt"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
 end

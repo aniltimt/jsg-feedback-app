@@ -13,12 +13,23 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "You signed up successfully"
       flash[:color]= "valid"
-      redirect_to :action => 'login'
+      redirect_to feedbacks_url #:action => 'login'
     else
       flash[:notice] = "Form is invalid"
       flash[:color]= "invalid"
       render "new"
     end    
+  end
+
+  # DELETE /users/1
+  # DELETE /users/1.json
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private

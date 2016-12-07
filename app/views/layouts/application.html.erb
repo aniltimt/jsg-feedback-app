@@ -13,9 +13,10 @@
 </head>
 <body>
 <div class="container">
+<h1> </h1>
 <% unless session[:user_id] %>
   <%#= link_to :Signup , :signup, class: "nav_links"%>
-  <%= link_to :Login , :login, class: "nav_links"%>	
+  <%#= link_to :Login , :login, class: "nav_links"%>	
 <% else %>
   <%= link_to :Feedbacks , feedbacks_url, class: "nav_links" %> |
   <%#= link_to :Profile , :profile, class: "nav_links" %>
